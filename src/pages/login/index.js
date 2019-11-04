@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import api from '../../services/api'
-import logo from '../../assets/logo.svg';
 
 export default function Login({ history }) {
 
@@ -16,19 +15,15 @@ export default function Login({ history }) {
 	}
 	
 	return (
-		<>
-			<img src={logo} alt="AirCnC" />
+		<>			
+			<p>Ofereça <strong>spots</strong> para programadores e encontre <strong>talentos</strong> para sua empresa</p>
 
-			<div className="content">
-					<p>Ofereça <strong>spots</strong> para programadores e encontre <strong>talentos</strong> para sua empresa</p>
+			<form onSubmit={handleSubmit}>
+					<label htmlFor="email">E-MAIL *</label>
+					<input type="email" id="email" placeholder="Seu melhor e-mail" onChange={event => setEmail(event.target.value)} value={email} />
 
-					<form onSubmit={handleSubmit}>
-							<label htmlFor="email">E-MAIL *</label>
-							<input type="email" id="email" placeholder="Seu melhor e-mail" onChange={event => setEmail(event.target.value)} value={email} />
-
-							<button type="submit" className="btn">Entrar</button>
-					</form>
-			</div>
+					<button type="submit" className="btn">Entrar</button>
+			</form>			
 		</>
 	)
 }
